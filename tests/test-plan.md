@@ -61,6 +61,6 @@ Plan and execute comprehensive testing for CleanCity - Waste Pickup Scheduler we
 ## 8. Devices Used for Testing:
 - 
 
-## 9. Tools Installed:
+## 9. Tools Installed: Jest/Pytest/Selenium
 
 
