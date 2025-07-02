@@ -29,6 +29,8 @@ Plan and execute comprehensive testing for CleanCity - Waste Pickup Scheduler we
 | **Mobile Responsiveness* | Compatibility, UI/UX       | Test responsive behavior in browser device modes and real mobile devices                                          |
 | *Performance Testing**   | Non-functional, Load       | Use Lighthouse and DevTools to evaluate page speed, memory usage, and UI responsiveness                           |
 | *Data Persistence*    | Functional, Reliability    | Inspect and validate localStorage usage, data retention, and integrity after reloads/sessions                     |
+| *Error Handling* | Functional, Usability | Test user input errors, system failures, form validations, and edge cases across all modules. Also, ensure clear error messages. |
+
 
 
 
@@ -56,10 +58,15 @@ Plan and execute comprehensive testing for CleanCity - Waste Pickup Scheduler we
 ## 7. Test Environment Setup Notes
 
 ## Browsers Used/Installed:
-- 
+- Google Chrome
+- Firefox 
+- Safari
+- Microsoft Edge
 
-## 8. Devices Used for Testing:
-- 
+## 8. Devices for Testing:
+- Laptop(Windows 11/10)
+- iOS device for Safari
+- Andriod(Samsung Galaxy A32)
 
 ## 9. Tools Installed: Jest/Pytest/Selenium
 
