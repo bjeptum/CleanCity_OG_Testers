@@ -89,3 +89,4 @@
 | FR058-01 | Change user role (User → Admin) | Functional | Selenium, Pytest | 1. Select user<br>2. Change role<br>3. Confirm | Role updated to Admin |
 | FR059-02 | Delete a user account | Functional | Selenium | 1. Locate a Delete option<br>2. Confirm | User is removed from the system |
 
+# Test Cases for the User Dashboard
