@@ -76,18 +76,20 @@ Test Strategy for the waste management platform involved creating epics on Jira 
 ## 7. Test Environment Setup Notes
 
 ## Browsers Used/Installed:
-- Google Chrome
-- Firefox 
-- Safari
-- Microsoft Edge
+- Google Chrome - Brenda
+- Firefox - Adams
+- Safari - Qaqamba/ Brenda
+- Microsoft Edge - Qaqamba
 
 ## 8. Devices for Testing:
-- Laptop(Windows 11/10)
-- iOS device for Safari
-- Andriod(Samsung Galaxy A32)
+- Laptop(Windows 11/10) - Qaqamba
+- Laptop(Linux) - Brenda
+- iOS device for Safari - Qaqamba/Brenda
+- Android(Samsung Galaxy A32) - Adams
 
 ## 9. Tools Installed: 
 
-Jest/Pytest/Selenium
+- Jest
+- Selenium
 
 
