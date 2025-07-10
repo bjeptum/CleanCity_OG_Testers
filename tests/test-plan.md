@@ -16,9 +16,71 @@ Plan and execute comprehensive testing for CleanCity - Waste Pickup Scheduler we
 - **Performance:** 
 - **Documentation:** Markdown in `tests/` folder, GitHub issues for bugs
 
-## 4. Test Strategy
+## 4. Testing Workflow
 
-Test Strategy for the waste management platform involved creating epics on Jira (project management tool) theb mapping each to functional requirements (FRs) to ensure complete coverage and easy tracing of tets activities.
+### (a) Epic Assignment
+
+ Each team members selects a Jira Epic and focus on the associated features and test areas.
+ 
+### (b) Test Case Creation
+
+ Test cases are then documented in a tabular format in Markdown or spreadsheet form and stored under the tests/ directory.
+ 
+ The table includes:
+ 
+  (i) Test Case : Linked Requirement ID (e.g., FR-003)
+
+  (ii) Test Type
+
+  (iii) Tool
+
+  (iv) Steps
+
+  (v) Expected Result
+
+  (vi) Actual Result : Pass/Fail Status
+  
+
+### (c) Test Execution & Defect Logging
+
+Test Execution
+
+Run tests (manual and/or automated) based on the defined test cases.
+
+Ensure results are updated in the test case table (Pass/Fail and Actual Result).
+
+### Defect Logging
+
+Log any bugs or issues in the `tests/defect-log.md` file, including the following fields:
+
+  - Defect ID
+  - Summary
+  - Severity
+  - Steps to Reproduce
+  - Linked Test Case
+
+>  Ensure defects are clearly described and linked back to relevant test cases or functional requirements.
+
+### Challenges
+
+Note any challenges, blockers, or unexpected behaviors encountered during test execution.
+
+Document them either:
+  - In `tests/defect-log.md` under a "Challenges Faced" section, or
+  - Inline within the related test case file as a comment or footnote
+
+### Automation Scripts
+
+Store all automation test scripts in the `tests/test_scripts/` directory.
+
+Ensure:
+  - Scripts are clearly named e.g.: `test_login_form_validation.js`
+  - Scripts are traceable to functional requirements and test cases.
+  - Add references or comments at the top of each script indicating the FRs and test cases covered.
+
+## 5. Test Strategy
+
+Test Strategy for the waste management platform involved creating epics on Jira (project management tool) then mapping each to functional requirements (FRs) to ensure complete coverage and easy tracing of the activities.
 
 ##  Test Strategy Overview 
 
@@ -52,7 +114,7 @@ Test Strategy for the waste management platform involved creating epics on Jira 
 | | Support & Logging | Functional | Check help tooltips, FAQ links, and activity/error logging | FR-093 to FR-097 |
 
 
-## 5.  Timeline (STLC Phases)
+## 7.  Timeline (STLC Phases)
 | Phase              | Date Range     |
 |--------------------|----------------|
 | Test Planning      | Jun 26 - Jul 2 |
@@ -60,7 +122,7 @@ Test Strategy for the waste management platform involved creating epics on Jira 
 | Test Execution     | Jul 5 - Jul 10 |
 | Test Closure       | Jul 11 - Jul 16|
 
- ## 6. Team Member Roles
+ ## 8. Team Member Roles
 
 | Name               | Role                    | Responsibilities                                   |Assigned Key Feature |
 |--------------------|-------------------------|----------------------------------------------------| ----- |
@@ -73,7 +135,7 @@ Test Strategy for the waste management platform involved creating epics on Jira 
 - Weekly meetings every Wednesday
 - Shared documentation and collaboration using GitHub
 
-## 7. Test Environment Setup Notes
+## 9. Test Environment Setup Notes
 
 ## Browsers Used/Installed:
 - Google Chrome - Brenda
@@ -81,15 +143,18 @@ Test Strategy for the waste management platform involved creating epics on Jira 
 - Safari - Qaqamba/ Brenda
 - Microsoft Edge - Qaqamba
 
-## 8. Devices for Testing:
+## 10. Devices for Testing:
 - Laptop(Windows 11/10) - Qaqamba
 - Laptop(Linux) - Brenda
 - iOS device for Safari - Qaqamba/Brenda
 - Android(Samsung Galaxy A32) - Adams
 
-## 9. Tools Installed: 
+## 11. Tools Installed: 
 
-- Jest
-- Selenium
+| **Tool**     | **Purpose**                          |
+| ------------ | ------------------------------------ |
+| Jest     | Unit & component-level testing       |
+| Selenium | Automation for end-to-end UI testing |
+
 
 
