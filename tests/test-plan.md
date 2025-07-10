@@ -20,9 +20,9 @@ Plan and execute comprehensive testing for CleanCity - Waste Pickup Scheduler we
 
 Test Strategy for the waste management platform involved creating epics on Jira (project management tool) theb mapping each to functional requirements (FRs) to ensure complete coverage and easy tracing of tets activities.
 
-## ✅ Test Strategy Overview (By Jira Epic)
+##  Test Strategy Overview 
 
-| **Epic** | **Test Area** | **Test Type** | **Test Approach** | **Functional Requirements Covered** |
+| ** Jira Epic** | **Test Area** | **Test Type** | **Test Approach** | **Functional Requirements Covered** |
 |----------|---------------|---------------|-------------------|-------------------------------------|
 | **Epic 1: Authentication System Testing** | User Registration, Login, Logout, Role Access | Functional, Security | Manual and automated test cases for field validation, session management, and role restrictions. Includes positive, negative, and edge case testing. | FR-001 to FR-011 |
 | | Session Handling | Functional | LocalStorage checks, session expiry, redirection logic | FR-006, FR-007, FR-008 |
