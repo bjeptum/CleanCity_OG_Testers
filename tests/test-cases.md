@@ -89,4 +89,38 @@
 | FR058-01 | Change user role (User → Admin) | Functional | Selenium, Pytest | 1. Select user<br>2. Change role<br>3. Confirm | Role updated to Admin |
 | FR059-02 | Delete a user account | Functional | Selenium | 1. Locate a Delete option<br>2. Confirm | User is removed from the system |
 
-# Test Cases for the User Dashboard
+# Personalized Dashboard Test Cases
+
+## Test Cases for User Dashboard
+
+| Test Case ID | Description                         | Type       | Tool     | Steps                                   | Expected Result                                  |
+|--------------|-------------------------------------|------------|----------|-----------------------------------------|--------------------------------------------------|
+| FR023-01     | Display personalized dashboard      | Functional | Selenium | 1. Login as a user                      | Personalized dashboard is displayed              |
+| FR023-02     | View recent pickup requests         | Functional | Selenium | 1. Login 2. Go to dashboard             | Recent pickup requests shown                     |
+| FR023-03     | View upcoming scheduled pickups     | Functional | Selenium | 1. Login 2. Go to dashboard             | Scheduled pickups are listed                     |
+| FR023-04     | View environmental impact stats     | Functional | Selenium | 1. Login 2. Go to dashboard             | Environmental stats displayed (waste, CO2, trees saved) |
+| FR023-05     | View achievement badges             | Functional | Selenium | 1. Login 2. Go to dashboard             | Achievement badges visible                       |
+| FR023-06     | Use quick action buttons            | Functional | Selenium | 1. Login 2. Click quick action buttons  | Redirects/Actions occur correctly                |
+| FR024-01     | Calculate & display total waste diverted | Functional | Selenium | 1. Login 2. View impact stats           | Total waste diverted is shown accurately         |
+| FR024-02     | Calculate & display CO2 saved       | Functional | Selenium | 1. Login 2. View impact stats           | CO2 savings displayed                            |
+| FR024-03     | Calculate & display trees equivalent | Functional | Selenium | 1. Login 2. View impact stats           | Trees equivalent is shown                        |
+
+## Test Cases for  Analytics & Reports
+
+| Test Case ID | Description                         | Type       | Tool     | Steps                                   | Expected Result                                  |
+|--------------|-------------------------------------|------------|----------|-----------------------------------------|--------------------------------------------------|
+| FR025-01     | View waste management charts/graphs | Functional | Selenium | 1. Login 2. Navigate to Analytics       | Visual data charts displayed                     |
+| FR026-01     | Display community leaderboard       | Functional | Selenium | 1. Login 2. Go to Leaderboard           | Leaderboard ranked by impact                     |
+| FR027-01     | View monthly waste trends           | Functional | Selenium | 1. Login 2. View trends section         | Monthly trends graph visible                     |
+| FR027-02     | View yearly waste trends            | Functional | Selenium | 1. Login 2. View trends section         | Yearly trends graph visible                      |
+| FR028-01     | Export user data to CSV             | Functional | Selenium | 1. Login 2. Click Export button         | CSV file downloaded successfully                 |
+
+## Test  Cases for Gamification
+
+| Test Case ID | Description                              | Type       | Tool     | Steps                                  | Expected Result                                |
+|--------------|------------------------------------------|------------|----------|----------------------------------------|------------------------------------------------|
+| FR029-01     | Award badge: First pickup scheduled      | Functional | Selenium | Schedule first pickup                  | Badge for first pickup awarded                 |
+| FR029-02     | Award badge: 10 pickups completed        | Functional | Selenium | Complete 10 pickups                    | "10 pickups" badge awarded                    |
+| FR029-03     | Award badge: Perfect recycling score     | Functional | Selenium | Get perfect recycling score            | Badge appears on dashboard                     |
+| FR029-04     | Award badge: Community contributor       | Functional | Selenium | Contribute in community events         | Contributor badge awarded                      |
+| FR030-01     | Track user points and level              | Functional | Selenium | Perform pickup and recycling actions   | Points increase and level updated              |
