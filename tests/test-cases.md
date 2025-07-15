@@ -124,3 +124,44 @@
 | FR029-03     | Award badge: Perfect recycling score     | Functional | Selenium | Get perfect recycling score            | Badge appears on dashboard                     |
 | FR029-04     | Award badge: Community contributor       | Functional | Selenium | Contribute in community events         | Contributor badge awarded                      |
 | FR030-01     | Track user points and level              | Functional | Selenium | Perform pickup and recycling actions   | Points increase and level updated              |
+
+# Community Features Testing
+
+## FR-045: View and Edit Profile Information
+
+| ID   | Description                      | Test Steps                                                                 | Expected Result                                            |
+|------|----------------------------------|----------------------------------------------------------------------------|------------------------------------------------------------|
+| 045-1 | View profile information         | 1. Login 2. Go to Profile                                                | User profile data (name, email, etc.) is shown             |
+| 045-2 | Edit profile information         | 1. Go to Profile<br>2. Click "Edit"<br>3. Modify fields<br>4. Save         | Updated info is saved and displayed                        |
+| 045-3 | Invalid profile data handling    | 1. Edit profile<br>2. Enter invalid email or empty field<br>3. Save        | Validation error shown; profile not updated                |
+
+## FR-046: Display Activity History and Achievements
+
+| ID   | Description                      | Test Steps                                                                 | Expected Result                                            |
+|------|----------------------------------|----------------------------------------------------------------------------|------------------------------------------------------------|
+| 046-1 | View activity history            | 1. Login<br>2. Go to Profile      | List of actions (blog posts, comments, requets) shown                  |
+| 046-2 | View achievements                | 1. Go to Profile                                      | Earned badges/achievements displayed                       |
+
+## FR-047: Upload Profile Picture
+
+| ID   | Description                      | Test Steps                                                                 | Expected Result                                            |
+|------|----------------------------------|----------------------------------------------------------------------------|------------------------------------------------------------|
+| 047-1 | Upload a valid image            | 1. Go to Profile<br>2. Click on Edit profilw <br>3. Paste image url<br>4. Click save profile  | Profile picture is updated and displayed                   |
+| 047-2 | Upload invalid file type        | 1. Try uploading .txt or .exe file as profile picture                      | Error shown: "Invalid file type"                           |
+| 047-3 | Remove profile picture          | 1. 1. Go to Profile<br>2. Click on Edit profilw <br>3. Delete image url<br>4. Click save profile                 | Default avatar is shown                                    |
+
+## FR-048: Show Statistics and Environmental Impact
+
+| ID   | Description                      | Test Steps                                                                 | Expected Result                                            |
+|------|----------------------------------|----------------------------------------------------------------------------|------------------------------------------------------------|
+| 048-1 | View statistics                 | 1. Go to Profile > Statistics                                              | Data like cleanups done, CO2 saved, reports filed shown    |
+| 048-2 | Statistics update after action | 1. Perform cleanup or report<br>2. Refresh stats                          | Stats reflect the new action                               |
+
+## FR-050: News Feed of Community Activities
+
+| ID   | Description                      | Test Steps                                                                 | Expected Result                                            |
+|------|----------------------------------|----------------------------------------------------------------------------|------------------------------------------------------------|
+| 050-1 | View community feed             | 1. Login<br> 2. Go to  Community                                                        | Activities of users shown                         |
+| 050-2 | Feed updates dynamically        | 1. Like or comment feed of a user<br>2. Refresh feed        | New activity appears in feed                               |
+
+
