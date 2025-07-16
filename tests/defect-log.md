@@ -1,3 +1,4 @@
+
 ## DEFECTS 
 **Title**: View achievements button
 
@@ -19,10 +20,10 @@
 
 **Severity**: High
 
-**Summary**:  
-The application accepts invalid email formats (short email addresses) without displaying an error message.
+**Summary**:  The application accepts invalid email formats (short email addresses) without displaying an error message.
 
----
+[After logging in with a short email address]![short email](<Screenshot 2025-07-14 205313.png>)
+--------------------------------------------
 
 **Title**: User login in Node.js and HTML version
 
@@ -32,5 +33,8 @@ The application accepts invalid email formats (short email addresses) without di
 
 **Severity**: High
 
-**Summary**:  
-When a user is not registered, the Node.js version displays an error message for invalid credentials, but the HTML version does
+**Summary**:  When a user is not registered, the Node.js version displays an error message for invalid credentials, but the HTML version does
+ 
+ [Successful login in Node.js]![alt text](<Screenshot 2025-07-16 112542.png>)
+ [Unsuccessful login in HTML version]![alt text](<Screenshot 2025-07-16 113147.png>)
+ 
