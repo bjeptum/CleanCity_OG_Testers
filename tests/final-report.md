@@ -1,9 +1,9 @@
 # Project: CleanCity web application testing
-**Testers/Members**:@adamsap1 @bjeptum @Qaqamba-M
-**Date Due**: 16 July 2025
+### Testers/Members*:@adamsap1 @bjeptum @Qaqamba-M
+### Date Due: 16 July 2025
 
-**Tools**:
-**Environment**:
+### Tools:
+### Environment:
 
 ## Techniques
 
