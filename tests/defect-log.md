@@ -84,11 +84,11 @@ NOTE: this could not be verified in Node.js version because requests do not refl
 
 **Jira/GitHub (Bug) Link**: [Defect](https://github.com/bjeptum/CleanCity_OG_Testers/issues/8)
 
-**Requirement Affected** Edit button does not respond when clicked by the admin (in HTML version). The edit button should respond to its function by resulting in the edit field/window being opened
+**Requirement Affected** Edit button does not respond when clicked by the admin (in HTML version). The edit button should respond to its function by resulting in the edit field/window being opened. [See the defect shown in the video this Jira scrum https://adamsapeh35.atlassian.net/browse/SCRUM-57]
 NOTE: this could not be verified in Node.js version because requests do not reflect there, see the previous bug.
 
 **Severity**: High
 
-**Summary**:  This limits the user and the admin because this will result in service complications and bad review for the application.  
+**Summary**:  This limits the user and the admin because this will result in service complications and bad review for the application. 
 [Admin Edit button] ![alt text](<Screenshot 2025-07-16 122344-1.png>)
 
