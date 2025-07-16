@@ -17,11 +17,7 @@
 | FR-005            | Login with invalid details                             | Equivalence partitioning | Selenium                     | 1. Enter invalid user details<br>2. Click Login                              | Display: “Invalid user details entered” | No error message. Redirected to profile page.                                               |
 | FR010-01          | Admin role can access admin page                       | Boundary value Analysis  | Selenium                     | 1. Login as admin<br>2. Redirect to admin page                               | Access granted                          | “Login successful! Redirecting...” then admin page loads                                    |
 | FR011-01          | Normal user restricted from admin                      | Boundary value Analysis  | Selenium                     | 1. Login as user<br>2. Try to access admin page                              | Error/Access denied                     | No admin button in nav bar. Error in terminal.                                              |
-| FR006             | User session is maintained in localStorage             | State transition testing | DevTools                     | 1. Login 
-2. Check Local Storage  
-3. Refresh
-4. Logout
-5. Re-check | Session data remains until logout       | Session not saved in localStorage                                                           |
+| FR006             | User session is maintained in localStorage             | State transition testing | DevTools                     | 1. Login 2. Check Local Storage  3. Refresh 4. Logout 5. Re-check | Session data remains until logout       | Session not saved in localStorage                                                           |
 | FR007             | Redirect after login                                   | State transition testing | Selenium                     | Visit restricted page, login                                                 | Redirect to intended page               | Redirected to profile page                                                                  |
 | FR008             | Logout clears session                                  | State transition testing | DevTools                     | 1. Login 2. Check Local Storage 3. Logout 4. Re-check               | Clears session from Local Storage       | Session cleared as expected                                                                 |
 | FR009             | Redirect to login after logout                         | State transition testing | Selenium                     | Click Logout button                                                          | Redirected to login page                | Redirected to landing page instead                                                          |
@@ -45,8 +41,8 @@
 | FR012-02  | Pickup date in the past                      | Functional              | Selenium/Manual    | Select a past date                              | Error: "Pickup date must be in the future"       |
 | FR012-03  | Pickup date is today                         | Functional              | Selenium           | Select today’s date                             | Error: "Must be at least 24 hours in advance"    |
 | FR012-04  | Missing required fields                      | Functional              | Selenium           | Leave fields blank                               | Validation error messages shown                  |
-| FR012-05  | Special instructions > 200 characters         | Functional              | Jest               | Input long string                                | Error: "Max length exceeded"                     |
-| FR012-06  | Address auto-filled from profile             | Functional              | Pytest/Selenium    | Open scheduling form                             | Address field auto-filled                        |
+| FR012-05  | Special instructions > 200 characters         | Functional              | Manual               | Input long string                                | Error: "Max length exceeded"                     |
+| FR012-06  | Address auto-filled from profile             | Functional              | Manual    | Open scheduling form                             | Address field auto-filled                        |
 | FR014-01  | Display available time slots                 | Functional              | Selenium           | Open scheduling form                             | Shows selectable time slots                      |
 | FR015-01  | Try scheduling two pickups on same date      | Functional              | Selenium           | Submit two requests for same day                 | Error: "Pickup already scheduled for this date"  |
 
