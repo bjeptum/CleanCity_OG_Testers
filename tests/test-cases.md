@@ -1,20 +1,30 @@
 # Test cases for User Authentication
 
 ## Functional Testing
-
-| Test Case ID  | Description                                     | Test Type                 | Tool                        | Steps                                 | Expected Result                        |
-|---------------|-------------------------------------------------|---------------------------|-----------------------------|----------------------------------------|-----------------------------------------|
-| FR001-01      | Register with valid data                        | Equivalence partitioning  | Selenium (Automated), Manual| Fill all required fields correctly     | Account created with "User" role       |
-| FR001-02      | Register with invalid email                     | Equivalence partitioning  | Selenium, Manual            | Enter invalid email                    | Error: "Invalid email format"          |
-| FR001-04      | Input unidentical passwords during registration | Equivalence partitioning  | Selenium                    | Mismatch password & confirm            | Error: "Passwords do not match"        |
-| FR002-01      | Leave full name empty                           | Equivalence partitioning  | Selenium                    | Leave full name blank                  | Error: "Full name is required"         |
-| FR002-02      | Enter long name > 50 chars                      | Boundary value Analysis    | Selenium                    | Input long name                        | Error: "Full name too long"            |
-| FR001-03      | Password < 8 chars                              | Boundary value Analysis    | Selenium, Manual            | Enter "1234567"                         | Error: "Password too short"            |
-| FR010-01      | Admin role can access admin page                | Boundary value Analysis    | Selenium, Pytest            | Login as admin → access `/admin`       | Access granted                         |
-| FR011-01      | Normal user restricted from admin               | Boundary value Analysis    | Selenium                    | Login as User → access `/admin`        | Error/Access denied page               |
-| FR007-01      | Redirect after login                            | State transition testing   | Selenium                    | Visit restricted page, login           | Redirect to intended page              |
-| FR008-01      | Logout clears session                           | State transition testing   | Jest, DevTools              | Click logout → Check localStorage      | Session/token removed                  |
-| FR009-01      | Redirect to login after logout                  | State transition testing   | Selenium                    | Logout from user page                  | Redirected to login page               |
+| **Test Cases**    | **Description**                                        | **Test Type**            | **Tool**                     | **Steps**                                                                    | **Expected Result**                     | **Results**                                                                                 |
+| ----------------- | ------------------------------------------------------ | ------------------------ | ---------------------------- | ---------------------------------------------------------------------------- | --------------------------------------- | ------------------------------------------------------------------------------------------- |
+| FR001-01 & FR-003 | Register with valid data and create a new User account | Equivalence partitioning | Selenium (Automated), Manual | Fill all required fields correctly                                           | Account created with "User" role        | Account is created successfully, but no message for a successful registration is displayed. |
+| FR001-02          | Register with invalid email                            | Equivalence partitioning | Selenium, Manual             | 1. Enter invalid email (missing .com)<br>2. Click Register                   | Error: "Invalid email format"           | No error message is displayed. Page redirects to login page.                                |
+| FR001-03          | Register with an empty email field                     | Boundary Analysis        | Selenium                     | 1. Leave the email field empty<br>2. Click Register                          | Error: "Please enter an email"          | “Please fill out the field” message is displayed.                                           |
+| FR001-04          | Input unidentical passwords during registration        | Equivalence partitioning | Selenium                     | Mismatch password & confirm                                                  | Error: "Passwords do not match"         | Password confirmation not required during registration                                      |
+| FR002-01          | Leave full name empty                                  | Equivalence partitioning | Selenium                     | Leave full name blank                                                        | Error: "Full name is required"          | “Please fill out this field” is displayed.                                                  |
+| FR002-02          | Enter long name > 50 chars                             | Boundary value Analysis  | Selenium                     | Input a long name                                                            | Error: "Full name too long"             | No error message. Page redirects to login page.                                             |
+| FR002-03          | Enter short name < 50 chars                            | Boundary value Analysis  | Selenium                     | 1. Enter 1-letter name<br>2. Click Register                                  | Error: "Full name too short"            | No error message. Page redirects to login page.                                             |
+| FR002-04          | Empty password field                                   | Equivalence partitioning | Selenium                     | 1. Leave password field empty<br>2. Click Register                           | Error: "Please enter a password"        | “Please fill out this field” message is displayed.                                          |
+| FR002-04          | Password < 8 chars                                     | Boundary value Analysis  | Selenium                     | 1. Enter a 1-letter password<br>2. Click Register                            | Error: "Password too short"             | No error message. Page redirects to login page.                                             |
+| FR002-05          | Password > 8 chars                                     | Boundary value Analysis  | Selenium                     | 1. Enter 15-character password<br>2. Click Register                          | Error: "Password too long"              | No error message. Page redirects to login page.                                             |
+| FR-004            | Login registered user with valid details               | Equivalence partitioning | Selenium                     | 1. Enter registered user details<br>2. Click Login                           | Display: “Login successful”             | Redirected to profile page                                                                  |
+| FR-005            | Login with invalid details                             | Equivalence partitioning | Selenium                     | 1. Enter invalid user details<br>2. Click Login                              | Display: “Invalid user details entered” | No error message. Redirected to profile page.                                               |
+| FR010-01          | Admin role can access admin page                       | Boundary value Analysis  | Selenium                     | 1. Login as admin<br>2. Redirect to admin page                               | Access granted                          | “Login successful! Redirecting...” then admin page loads                                    |
+| FR011-01          | Normal user restricted from admin                      | Boundary value Analysis  | Selenium                     | 1. Login as user<br>2. Try to access admin page                              | Error/Access denied                     | No admin button in nav bar. Error in terminal.                                              |
+| FR006             | User session is maintained in localStorage             | State transition testing | DevTools                     | 1. Login 
+2. Check Local Storage  
+3. Refresh
+4. Logout
+5. Re-check | Session data remains until logout       | Session not saved in localStorage                                                           |
+| FR007             | Redirect after login                                   | State transition testing | Selenium                     | Visit restricted page, login                                                 | Redirect to intended page               | Redirected to profile page                                                                  |
+| FR008             | Logout clears session                                  | State transition testing | DevTools                     | 1. Login 2. Check Local Storage 3. Logout 4. Re-check               | Clears session from Local Storage       | Session cleared as expected                                                                 |
+| FR009             | Redirect to login after logout                         | State transition testing | Selenium                     | Click Logout button                                                          | Redirected to login page                | Redirected to landing page instead                                                          |
 
 ## Non-functional Testing
 
@@ -73,11 +83,15 @@
 
 | Test Case | Description | Type | Tool | Steps | Expected Result |
 |-----------|-------------|------|------|-------|------------------|
-| FR053-01 | View all pickup requests | Functional, Black Box | Selenium | 1. Login as admin<br>2. Navigate to requests | All requests displayed |
+| FR053-01 | View all pickup requests | Functional, Black Box | Selenium | 1. Login as admin
+2. Navigate to requests | All requests displayed |
 | FR054-01 | Approve a pending request | Functional | Selenium | Click “Approve” on a request | Status changes to “Approved” |
-| FR054-02 | Reject a pending request | Functional | Selenium | 1. Click “Reject”<br>2. Confirm | Status changes to “Rejected” |
-| FR054-03 | Modify a request (e.g., time) | Functional | Selenium | 1. Edit details<br>2. Save | Request is updated successfully |
-| FR055-01 | Assign pickup date and time | Functional | Selenium | 1. Choose date/time<br>2. Assign | Assignment saved and shown in list |
+| FR054-02 | Reject a pending request | Functional | Selenium | 1. Click “Reject”
+2. Confirm | Status changes to “Rejected” |
+| FR054-03 | Modify a request (e.g., time) | Functional | Selenium | 1. Edit details
+2. Save | Request is updated successfully |
+| FR055-01 | Assign pickup date and time | Functional | Selenium | 1. Choose date/time
+2. Assign | Assignment saved and shown in list |
 | FR056-01 | Filter requests by status | Functional | Selenium | Use dropdown filter by status (Pending, completed, scheduled, missed) and location | Only pending requests shown if pending was chosen for either all cities or one chosen city |
 | FR056-02 | Search requests by user/email | Functional | Selenium | Enter user email in search box | Matching requests displayed |
 
@@ -86,8 +100,11 @@
 | Test Case | Description | Type | Tool | Steps | Expected Result |
 |-----------|-------------|------|------|-------|------------------|
 | TC-FR057-01 | View all users | Functional | Selenium | Navigate to user list | All users listed |
-| FR058-01 | Change user role (User → Admin) | Functional | Selenium, Pytest | 1. Select user<br>2. Change role<br>3. Confirm | Role updated to Admin |
-| FR059-02 | Delete a user account | Functional | Selenium | 1. Locate a Delete option<br>2. Confirm | User is removed from the system |
+| FR058-01 | Change user role (User → Admin) | Functional | Selenium, Pytest | 1. Select user
+2. Change role
+3. Confirm | Role updated to Admin |
+| FR059-02 | Delete a user account | Functional | Selenium | 1. Locate a Delete option
+2. Confirm | User is removed from the system |
 
 # Personalized Dashboard Test Cases
 
@@ -164,4 +181,12 @@
 | 050-1 | View community feed             | 1. Login<br> 2. Go to  Community                                                        | Activities of users shown                         |
 | 050-2 | Feed updates dynamically        | 1. Like or comment feed of a user<br>2. Refresh feed        | New activity appears in feed                               |
 
+# Test cases for Blogs
+| **Test Case** | **Feature**          | **Description**                                     | **Expected Result**                          | **Results** |
+| ------------- | -------------------- | --------------------------------------------------- | -------------------------------------------- | ----------- |
+| TC-001        | Blog System          | Blog section related to waste management is present | Users see blog posts about waste/environment | Pass        |
+| TC-002        | Blog System          | Users can view blog posts                           | Blog content is readable                     | Pass        |
+| TC-003        | Blog Interaction     | Users can interact with posts (like and comment)    | Interaction buttons work                     | Pass        |
+| TC-004        | Blog Management      | Users/admins can create, edit, delete blog posts    | Blog post management UI functional           | Fail        |
+| TC-005        | Blog Categories/Tags | Blog supports tags or categories                    | Posts show under proper tags/categories      | Fail        |
 
