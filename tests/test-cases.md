@@ -79,15 +79,11 @@
 
 | Test Case | Description | Type | Tool | Steps | Expected Result |
 |-----------|-------------|------|------|-------|------------------|
-| FR053-01 | View all pickup requests | Functional, Black Box | Selenium | 1. Login as admin
-2. Navigate to requests | All requests displayed |
+| FR053-01 | View all pickup requests | Functional, Black Box | Selenium | 1. Login as admin 2. Navigate to requests | All requests displayed |
 | FR054-01 | Approve a pending request | Functional | Selenium | Click “Approve” on a request | Status changes to “Approved” |
-| FR054-02 | Reject a pending request | Functional | Selenium | 1. Click “Reject”
-2. Confirm | Status changes to “Rejected” |
-| FR054-03 | Modify a request (e.g., time) | Functional | Selenium | 1. Edit details
-2. Save | Request is updated successfully |
-| FR055-01 | Assign pickup date and time | Functional | Selenium | 1. Choose date/time
-2. Assign | Assignment saved and shown in list |
+| FR054-02 | Reject a pending request | Functional | Selenium | 1. Click “Reject” 2. Confirm | Status changes to “Rejected” |
+| FR054-03 | Modify a request (e.g., time) | Functional | Selenium | 1. Edit details 2. Save | Request is updated successfully |
+| FR055-01 | Assign pickup date and time | Functional | Selenium | 1. Choose date/time 2. Assign | Assignment saved and shown in list |
 | FR056-01 | Filter requests by status | Functional | Selenium | Use dropdown filter by status (Pending, completed, scheduled, missed) and location | Only pending requests shown if pending was chosen for either all cities or one chosen city |
 | FR056-02 | Search requests by user/email | Functional | Selenium | Enter user email in search box | Matching requests displayed |
 
@@ -96,11 +92,8 @@
 | Test Case | Description | Type | Tool | Steps | Expected Result |
 |-----------|-------------|------|------|-------|------------------|
 | TC-FR057-01 | View all users | Functional | Selenium | Navigate to user list | All users listed |
-| FR058-01 | Change user role (User → Admin) | Functional | Selenium, Pytest | 1. Select user
-2. Change role
-3. Confirm | Role updated to Admin |
-| FR059-02 | Delete a user account | Functional | Selenium | 1. Locate a Delete option
-2. Confirm | User is removed from the system |
+| FR058-01 | Change user role (User → Admin) | Functional | Selenium, Pytest | 1. Select use 2. Change role 3. Confirm | Role updated to Admin |
+| FR059-02 | Delete a user account | Functional | Selenium | 1. Locate a Delete option 2. Confirm | User is removed from the system |
 
 # Personalized Dashboard Test Cases
 
