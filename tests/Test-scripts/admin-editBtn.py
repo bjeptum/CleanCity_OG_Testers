@@ -4,14 +4,16 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time 
 
-def login_button():
+# Admnin dashboard
+
+def edit_button():
     driver = webdriver.Chrome()  # Initialize the Chrome driver
 
     try:
         driver.get("http://127.0.0.1:5500/index.html")  # Navigate to the website
 
         login_button = WebDriverWait(driver, 10).until(
-            EC.element_to_be_clickable((By.LINK_TEXT, "Login"))
+            EC.presence_of_element_located((By.XPATH, "/html/body/div/nav/div/ul/li[2]/a[1]"))
         )
         login_button.click()  # Click the Register button
         time.sleep(2)
@@ -36,7 +38,7 @@ def login_button():
         submit_button.click()  # Click the login button
         time.sleep(5)
 
-        # Condition 3 : Admin/User trying to access the admin page
+        # Condition 3 : Admin page
 
         admin_page = WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.XPATH, "/html/body/div/nav/div/ul/li[3]/a[3]"))
@@ -44,13 +46,20 @@ def login_button():
         admin_page.click()  # Click the admin page link
         time.sleep(5)
 
+        # Edit button
+
+        edit_button = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, "/html/body/div/div[2]/div[7]/div[3]/div/table/tbody/tr[1]/td[7]/button"))
+        )
+        edit_button.click()
+        time.sleep(2)
+
         print("Current URL:", driver.current_url)
         assert "127.0.0.1:5500/index.html" in driver.current_url, "URL does not contain 'login'"
-        print("Login button clicked successfully.")
-        print("Admin login successful")
+        print("Edit button clicked")
 
     finally:
         driver.quit()
 
 # Calling the function
-login_button()
+edit_button()
