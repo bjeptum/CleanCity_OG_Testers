@@ -46,7 +46,7 @@
 **Requirement Affected**: FR-051: The system shall allow users to share achievements and milestones.
 
 **Severity**: Medium
- --------------------------------------------
+--------------------------------------------
 
 **Title**: Acceptance of invalid details
 
